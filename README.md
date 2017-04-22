@@ -12,6 +12,6 @@ Cardiyo is a new kind of activity tracker. The goal is to make it easy to share 
 - Create SQL database using provided schema
 - Register Azure blob storage, add credentials to config
 - Register FB app, add credentials to config
-- Register Mailgun accoutn, add credentials to config
+- Register Mailgun account, add credentials to config
 - npm install dependencies
 - Deploy
