@@ -4,6 +4,7 @@
 
 ## About
 Cardiyo is a new kind of activity tracker. We make it easy to share the feeling of a run, rather than just the stats.
+
 [App Store Link](https://itunes.apple.com/st/app/cardiyo-social-run-tracker/id1198644231?mt=8)
 
 ## Installation
