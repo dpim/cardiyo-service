@@ -3,7 +3,7 @@
 ![Logo](http://i.imgur.com/pH1XClR.png)
 
 ## About
-Cardiyo is a new kind of activity tracker. We make it easy to share the feeling of a run, rather than just the stats.
+Cardiyo is a new kind of activity tracker. The goal is to make it easy to share the feeling of a run, rather than just the stats.
 
 [App Store Link](https://itunes.apple.com/st/app/cardiyo-social-run-tracker/id1198644231?mt=8)
 
