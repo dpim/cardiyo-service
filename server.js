@@ -42,7 +42,7 @@ app.post('/v1/auth',
         //login and upsert a user
         var displayName = req.user[0];
         var userId = req.user[1];
-        tools.upsertuser(displayName, userId, res)
+        tools.upsertUser(displayName, userId, res)
     })
 
 //Creation
@@ -79,7 +79,7 @@ app.post('/v1/records',
                         if (error) {
                             console.log(error);
                         } else {
-                            tools.addrecord(user_id, caption, points_serialized, primary_image, map_image, duration, distance, ispublic, res);
+                            tools.addRecord(user_id, caption, points_serialized, primary_image, map_image, duration, distance, ispublic, res);
                         }
                     });
                 }
@@ -92,7 +92,7 @@ app.post('/v1/records/:recordId/like',
     function (req, res) {
         var user_id = req.user[1];
         var record_id = req.params["recordId"];
-        tools.addlike(user_id, record_id, res);
+        tools.addLike(user_id, record_id, res);
     })
 
 app.post('/v1/records/:recordId/report',
@@ -109,7 +109,7 @@ app.post('/v1/records/:recordId/makePublic',
     function (req, res) {
         var user_id = req.user[1];
         var record_id = req.params["recordId"];
-        tools.makepublic(user_id, record_id, res);
+        tools.makePublic(user_id, record_id, res);
     })
 
 app.post('/v1/records/:recordId/makePrivate',
@@ -117,23 +117,22 @@ app.post('/v1/records/:recordId/makePrivate',
     function (req, res) {
         var user_id = req.user[1];
         var record_id = req.params["recordId"];
-        tools.makeprivate(user_id, record_id, res);
+        tools.makePrivate(user_id, record_id, res);
     })
-
 
 //Fetch
 app.get('/v1/likersForRecord/:recordId',
     passport.authenticate('facebook-token'),
     function (req, res) {
         var recordId = req.params["recordId"];
-        tools.getlikesforrecord(recordId, res);
+        tools.getLikesForRecord(recordId, res);
     })
 
 app.get('/v1/personalRecords',
     passport.authenticate('facebook-token'),
     function (req, res) {
         var user_id = req.user[1];
-        tools.getpersonalrecords(user_id, res);
+        tools.getPersonalRecords(user_id, res);
     })
 
 app.get('/v1/records/:recordId',
@@ -141,7 +140,7 @@ app.get('/v1/records/:recordId',
     function (req, res) {
         var recordId = req.params["recordId"];
         var user_id = req.user[1];
-        tools.getrecord(user_id, recordId, res);
+        tools.getRecord(user_id, recordId, res);
     })
 
 app.get('/v1/history',
@@ -149,7 +148,7 @@ app.get('/v1/history',
     function (req, res) {
         //get my personal history - all my activities
         var user_id = req.user[1];
-        tools.getrecordsforuser(user_id, res);
+        tools.getRecordsForUser(user_id, res);
     })
 
 app.get('/v1/feed/:page',
@@ -158,7 +157,7 @@ app.get('/v1/feed/:page',
         //get feed
         var user_id = req.user[1];
         var page = req.params["page"];
-        tools.getrecentrecords(user_id, page, res)
+        tools.getRecentRecords(user_id, page, res)
     })
 
 //Delete
@@ -167,7 +166,7 @@ app.delete('/v1/records/:recordId',
     function (req, res) {
         var user_id = req.user[1];
         var record_id = req.params["recordId"];
-        tools.deleterecord(user_id, record_id, res);
+        tools.deleteRecord(user_id, record_id, res);
     })
 
 app.delete('/v1/records/:recordId/like', //unlike
@@ -175,14 +174,14 @@ app.delete('/v1/records/:recordId/like', //unlike
     function (req, res) {
         var user_id = req.user[1];
         var record_id = req.params["recordId"];
-        tools.deletelike(user_id, record_id, res);
+        tools.deleteLike(user_id, record_id, res);
     })
 
 app.delete('/v1/users/deleteSelf',
     passport.authenticate('facebook-token'),
     function (req, res) {
         var user_id = req.user[1];
-        tools.deleteuser(user_id, res)
+        tools.deleteUser(user_id, res)
     })
 
 //Utility
