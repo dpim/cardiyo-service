@@ -2,8 +2,6 @@
 var mysql = require('mysql')
 var query = require('./query')
 var queries = require('./queries')
-var config = require('./config')
-
 
 var pool = mysql.createPool({
     connectionLimit: 200,

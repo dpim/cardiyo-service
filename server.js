@@ -4,7 +4,7 @@ var azure = require('azure-storage');
 var uuidV1 = require('uuid/v1');
 var app = express()
 var bodyParser = require('body-parser')
-var tools = require('./db');
+var tools = require('./db/db');
 var FacebookTokenStrategy = require('passport-facebook-token');
 var blobService = azure.createBlobService("cyobinstorage", "") //YOUR blob storage
 
